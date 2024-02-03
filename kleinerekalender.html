@@ -1,64 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #fff;
+<script>
+    function generateCalendar(d) {
+        var monthNames = [ "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December" ];
+        var dayNames = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+        var today = d ? new Date(d) : new Date();
+        var dim = new Date(today.getFullYear(), today.getMonth()+1, 0).getDate();
+        var firstDay = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+        var calendar = '<table><tr>';
+        // Add day names header
+        for (var i = 0; i < dayNames.length; i++) {
+            calendar += '<th>' + dayNames[i] + '</th>';
         }
-
-        .wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            min-height: 100%;
+        calendar += '</tr><tr>';
+        var day = 1;
+        // Fill in the days
+        for (var i = 0; i < 35; i++) {
+            if (i >= firstDay && day <= dim) {
+                calendar += '<td>' + day + '</td>';
+                day++;
+            } else {
+                calendar += '<td></td>';
+            }
+            if ((i + 1) % 7 == 0 && day <= dim) {
+                calendar += '</tr><tr>';
+            }
         }
+        calendar += '</tr></table>';
+        document.getElementById('calendari').innerHTML = calendar;
+    }
 
-        #calendari {
-            margin: 0 auto;
-            font-size: 7.7px; /* Adjusted from 14px to scale by ~0.55 */
-        }
-
-        table {
-            border-collapse: collapse;
-            table-layout: fixed;
-            box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
-            background-color: #fff;
-            position: absolute;
-        }
-
-        td, th {
-            text-align: center;
-            background-color: #fff;
-        }
-
-        th {
-            padding: 5.5px; /* Adjusted padding */
-        }
-
-        tr:first-child th {
-            font-size: 11px; /* Adjusted from 20px */
-            font-weight: bold;
-        }
-
-        td > span, .boto-next, .boto-prev {
-            padding: 5.5px; /* Adjust accordingly */
-            font-size: 7.7px; /* Adjust font sizes */
-        }
-
-        /* Continue adjusting sizes and paddings for other elements based on the 0.55 scaling factor */
-    </style>
-</head>
-<body>
-    <div class="wrapper">
-        <div id="calendari"></div>
-    </div>
-    <script>
-        // Your JavaScript code here
-    </script>
-</body>
-</html>
+    generateCalendar();
+</script>
