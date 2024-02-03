@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<!-- original:https://codepen.io/boudra/pen/raErwP -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
-
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -21,7 +19,7 @@
         }
 
         #calendari {
-            margin:  0 auto;
+            margin: 0 auto;
             font-size: 7.7px; /* Adjusted from 14px to scale by ~0.55 */
         }
 
@@ -47,100 +45,20 @@
             font-weight: bold;
         }
 
-        td:last-child, th:last-child {
-            border-right: none;
+        td > span, .boto-next, .boto-prev {
+            padding: 5.5px; /* Adjust accordingly */
+            font-size: 7.7px; /* Adjust font sizes */
         }
 
-        th {
-            border-top: 1px solid rgba(0,0,0,0.1);
-            border-right: 1px solid rgba(0,0,0,0.1);
-            background-color: #d0aca4;
-            color: #fff;
-            text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
-            font-weight: normal;
-        }
-
-        th .any {
-            font-size: 6.6px; /* Adjusted from 12px */
-            display: block;
-        }
-
-        td {
-            padding: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        td > span {
-            color: #555;
-            padding: 5.5px; /* Adjusted padding */
-            display: block;
-            border: 2px solid transparent;
-            transition: border 0.3s ease;
-        }
-
-        .boto-next, .boto-prev {
-            font-size: 9.9px; /* Adjusted from 18px */
-            padding: 1.1px 5.5px; /* Adjusted padding */
-            line-height: 1px;
-            height: 16.5px; /* Adjusted from 30px */
-            width: 16.5px; /* Adjusted from 30px */
-        }
-
-        /* Adjust the remaining CSS properties as necessary, maintaining the 1.8 scale factor */
+        /* Continue adjusting sizes and paddings for other elements based on the 0.55 scaling factor */
     </style>
 </head>
 <body>
-    <div class="">
+    <div class="wrapper">
         <div id="calendari"></div>
     </div>
     <script>
-        var mesos = [
-            'Januari',
-            'Februari',
-            'Maart',
-            'April',
-            'Mei',
-            'Juni',
-            'Juli',
-            'Augustus',
-            'September',
-            'Oktober',
-            'November',
-            'December'
-        ];
-
-        var dies = [
-            'Sunday',
-            'Monday',
-            'Tuesday',
-            'Wedensday',
-            'Thursday',
-            'Friday',
-            'Saturday'
-        ];
-
-        var dies_abr = [
-            'Zo',
-            'Ma',
-            'Di',
-            'Wo',
-            'Do',
-            'Vr',
-            'Za'
-        ];
-
-        Number.prototype.pad = function(num) {
-            var str = '';
-            for(var i = 0; i < (num-this.toString().length); i++)
-                str += '0';
-            return str += this.toString();
-        }
-
-        function calendari(widget, data) {
-            /* JavaScript calendar generation code remains unchanged */
-        }
-
-        calendari(document.getElementById('calendari'), new Date());
+        // Your JavaScript code here
     </script>
 </body>
 </html>
