@@ -1,1 +1,42 @@
-H
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+#calendari {
+    margin:  0 auto;
+    font-size: 7.7px; /* Adjusted from 14px */
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+    background-color: #fff;
+    position: absolute;
+}
+
+td, th {
+    text-align: center;
+    background-color: #fff;
+}
+
+th {
+    padding: 5.5px; /* Adjusted from 10px */
+}
+
+td > span, .boto-next, .boto-prev {
+    padding: 5.5px; /* Adjust accordingly */
+    font-size: 7.7px; /* Adjust font sizes */
+}
+
+/* Continue adjusting sizes and paddings for other elements based on the 0.55 scaling factor */
+
